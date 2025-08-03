@@ -50,24 +50,34 @@
 		/* Makes the image take up a proportional space */
 	}
 
-	.image_storm img {
-		width: 100%;
-		height: 300px;
-		display: flex;
-		object-fit: cover;
-		max-width: 250px;
-		border-radius: 5%;
-		/* Adjust this to fit your layout */
-	}
-
+	/* Improved responsive image styling */
 	.image img {
 		width: 100%;
 		height: auto;
-		display: flex;
+		display: block;
 		object-fit: cover;
-		max-width: 250px;
-		border-radius: 5%;
-		/* Adjust this to fit your layout */
+		max-width: 350px; /* Larger max size for better visibility */
+		min-height: 200px; /* Ensure consistent height */
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		margin: 0 auto;
+	}
+
+	.image img:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+	}
+
+	/* Legacy storm image styling - keeping for compatibility */
+	.image_storm img {
+		width: 100%;
+		height: 300px;
+		display: block;
+		object-fit: cover;
+		max-width: 350px;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 
 	.content {
@@ -98,6 +108,38 @@
 	@media screen and (max-width: 480px) {
 		.logo-main {
 			max-width: 250px;
+		}
+	}
+
+	/* Desktop spacing - more gap between image and text */
+	@media screen and (min-width: 769px) {
+		.w3-content {
+			gap: 40px; /* Increase gap between columns on desktop */
+			display: flex;
+			align-items: center;
+		}
+		.w3-third {
+			flex: 0 0 auto;
+			margin-right: 40px;
+		}
+		.w3-twothird {
+			flex: 1;
+		}
+	}
+
+	/* Responsive breakpoints for service images */
+	@media screen and (max-width: 768px) {
+		.image img {
+			max-width: 300px;
+			min-height: 180px;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.image img {
+			max-width: 250px;
+			min-height: 150px;
+			margin-bottom: 1em;
 		}
 	}
 </style>
@@ -141,7 +183,7 @@
 		<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
 			<div class="w3-content">
 				<div class="w3-third w3-center">
-					<a href="#" class="image"><img src="images/tree-removal.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/tree-removal.jpg" alt="Safe and efficient tree removal services" /></a>
 				</div>
 
 				<div class="w3-twothird">
@@ -155,7 +197,7 @@
 		<div class="w3-row-padding w3-theme-l3 w3-padding-64 w3-container">
 			<div class="w3-content">
 				<div class="w3-third w3-center">
-					<a href="#" class="image"><img src="images/tree-removal.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/tree-removal-new.jpg" alt="Professional tree trimming and pruning services" /></a>
 				</div>
 
 				<div class="w3-twothird">
@@ -169,7 +211,7 @@
 		<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
 			<div class="w3-content">
 				<div class="w3-third w3-center">
-					<a href="#" class="image"><img src="images/storm-damage.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/storm-damage.jpg" alt="Storm damage cleanup and emergency tree services" /></a>
 				</div>
 
 				<div class="w3-twothird">
@@ -183,7 +225,7 @@
 		<div class="w3-row-padding w3-theme-l3 w3-padding-64 w3-container">
 			<div class="w3-content">
 				<div class="w3-third w3-center">
-					<a href="#" class="image"><img src="images/stump.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/stump.jpg" alt="Professional stump grinding and removal" /></a>
 				</div>
 
 				<div class="w3-twothird">
