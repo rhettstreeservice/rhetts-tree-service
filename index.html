@@ -74,13 +74,39 @@
 		flex: 2;
 		/* Makes the text area larger */
 	}
+
+	/* Responsive Logo Styling */
+	.logo-main {
+		/* Make logo responsive while maintaining aspect ratio */
+		width: 100%;
+		max-width: 450px; /* Larger max size for desktop */
+		height: auto;
+		display: block;
+		margin: 0 auto 1.5em auto;
+		/* Center the logo and add some bottom margin */
+	}
+
+	/* Mobile adjustments */
+	@media screen and (max-width: 768px) {
+		.logo-main {
+			max-width: 280px; /* Smaller but still prominent on mobile */
+			margin-bottom: 1em;
+		}
+	}
+
+	/* Very small screens */
+	@media screen and (max-width: 480px) {
+		.logo-main {
+			max-width: 250px;
+		}
+	}
 </style>
 
 <body class="is-preload">
 
 	<!-- Header -->
 	<div id="header">
-		<img src="./images/Logo_trans.png" width="200">
+		<img src="./images/Logo_trans.png" class="logo-main">
 		<h1>Rhett's Tree Service</h1>
 		<p>Down-to-Earth Tree Service—Rooted in Family, Trusted by Neighbors.</p>
 		
