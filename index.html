@@ -19,6 +19,10 @@
 </head>
 
 <style>
+	html {
+		scroll-behavior: smooth;
+	}
+
 	.cta-button {
 		display: inline-block;
 		background-color: #228B22;
@@ -36,6 +40,168 @@
 	.cta-button:hover {
 		background-color: #1C741C;
 		/* Darker Green */
+	}
+
+	#estimateForm {
+		background: white;
+		padding: 30px;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	}
+
+	#estimateForm .form-group {
+		margin-bottom: 20px;
+	}
+
+	#estimateForm label {
+		display: block;
+		margin-bottom: 8px;
+		color: #333;
+		font-weight: 500;
+		font-size: 14px;
+	}
+
+	#estimateForm input[type="text"],
+	#estimateForm input[type="email"],
+	#estimateForm input[type="tel"],
+	#estimateForm textarea {
+		width: 100%;
+		padding: 12px 15px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		font-size: 14px;
+		font-family: inherit;
+		box-sizing: border-box;
+		transition: border-color 0.3s ease;
+	}
+
+	#estimateForm input[type="text"]:focus,
+	#estimateForm input[type="email"]:focus,
+	#estimateForm input[type="tel"]:focus,
+	#estimateForm textarea:focus {
+		outline: none;
+		border-color: #228B22;
+		box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.1);
+	}
+
+	#estimateForm textarea {
+		resize: vertical;
+		min-height: 100px;
+	}
+
+	#estimateForm .form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	#estimateForm .form-row.full {
+		grid-template-columns: 1fr;
+	}
+
+	@media (max-width: 768px) {
+		#estimateForm .form-row {
+			grid-template-columns: 1fr;
+		}
+
+		#estimateForm .submit-btn {
+			margin-bottom: 40px;
+		}
+	}
+
+	#estimateForm .submit-btn {
+		background-color: #228B22;
+		color: white;
+		padding: 14px 40px;
+		border: none;
+		border-radius: 4px;
+		font-size: 16px;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+		width: 100%;
+	}
+
+	#estimateForm .submit-btn:hover:not(:disabled) {
+		background-color: #1C741C;
+	}
+
+	#estimateForm .submit-btn:disabled {
+		background-color: #cccccc;
+		cursor: not-allowed;
+	}
+
+	.response-message {
+		margin-top: 20px;
+		padding: 15px 20px;
+		border-radius: 4px;
+		border-left: 4px solid;
+		display: none;
+	}
+
+	.response-message.success {
+		background-color: #d4edda;
+		border-left-color: #28a745;
+		color: #155724;
+	}
+
+	.response-message.error {
+		background-color: #f8d7da;
+		border-left-color: #dc3545;
+		color: #721c24;
+	}
+
+	.address-toggle {
+		background-color: #f8f9fa;
+		border: 1px solid #ddd;
+		padding: 12px 15px;
+		border-radius: 4px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 20px 0;
+		user-select: none;
+		transition: background-color 0.3s ease;
+	}
+
+	.address-toggle:hover {
+		background-color: #e9ecef;
+	}
+
+	.address-toggle-text {
+		font-weight: 500;
+		color: #333;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.address-toggle-icon {
+		display: inline-block;
+		transition: transform 0.3s ease;
+	}
+
+	.address-toggle.active .address-toggle-icon {
+		transform: rotate(180deg);
+	}
+
+	.address-section {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+	}
+
+	.address-section.active {
+		max-height: 1000px;
+	}
+
+	.address-section-content {
+		padding: 20px;
+		background-color: #f8f9fa;
+		border: 1px solid #ddd;
+		border-top: none;
+		border-radius: 0 0 4px 4px;
 	}
 
 	.feature {
@@ -83,7 +249,7 @@
 		<img src="./images/Logo_trans.png" width="200">
 		<h1>Rhett's Tree Service</h1>
 
-		<a href="contact.html" class="cta-button">Get a Free Estimate</a>
+		<a href="#footer" class="cta-button">Get a Free Estimate</a>
 
 	</div>
 
@@ -106,7 +272,7 @@
 		<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
 			<div class="w3-content">
 				<div class="w3-third w3-center">
-					<a href="#" class="image"><img src="images/tree-removal.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/logs.jpg" alt="Tree Removal" /></a>
 				</div>
 
 				<div class="w3-twothird">
@@ -122,7 +288,7 @@
 		<div class="w3-row-padding w3-theme-l3 w3-padding-64 w3-container">
 			<div class="w3-content">
 				<div class="w3-third w3-center">
-					<a href="#" class="image"><img src="images/tree-removal.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/tree-removal.jpg" alt="Tree Trimming" /></a>
 				</div>
 
 				<div class="w3-twothird">
@@ -138,7 +304,7 @@
 		<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
 			<div class="w3-content">
 				<div class="w3-third w3-center">
-					<a href="#" class="image"><img src="images/stump.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/stump.jpg" alt="Stump Grinding" /></a>
 				</div>
 
 				<div class="w3-twothird">
@@ -151,13 +317,13 @@
 		</div>
 
 		<!-- 4 -->
-		<div class="w3-row-padding w3-theme-l3 w3-padding-64 w3-container">
-			<div class="w3-content">
-				<div class="w3-third w3-center">
-					<a href="#" class="image_storm"><img src="images/storm-damage.jpg" alt="" /></a>
-				</div>
+	<div class="storm-damage-section">
+		<div class="storm-damage-container">
+			<div class="storm-damage-image">
+				<a href="#" class="image_storm"><img src="images/storm-damage.jpg" alt="Storm Damage" /></a>
+			</div>
 
-				<div class="w3-twothird">
+			<div class="storm-damage-content">
 					<h1>Storm Damage</h1>
 					<p class="w3-text-grey">We remove trees safely—whether they’ve already fallen or pose a risk. Using climbing
 						techniques, and specialized equipment, we handle removals efficiently without damaging your property. No
@@ -308,14 +474,6 @@
 				</div>
 				-->
 
-		<footer class="major container medium">
-			<h3>Get shady with science</h3>
-			<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris
-				ipsum fermentum etiam vivamus.</p>
-			<ul class="actions special">
-				<li><a href="#" class="button">Join our crew</a></li>
-			</ul>
-		</footer>
 
 	</div>
 
@@ -324,31 +482,82 @@
 		<div class="container medium">
 
 			<header class="major last">
-				<h2>Questions or comments?</h2>
-			</header>
+			<h2>Get a Free Estimate</h2>
+		</header>
 
-			<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor
-				orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
+		<p>Fill out the form below with your contact info and service needs. We'll get back to you shortly!</p>
 
-			<form method="post" action="#">
-				<div class="row">
-					<div class="col-6 col-12-mobilep">
-						<input type="text" name="name" placeholder="Name" />
+		<form id="estimateForm">
+			<div class="form-row full">
+				<div class="form-group">
+					<label for="name">Full Name *</label>
+					<input type="text" id="name" name="name" placeholder="John Smith" required />
+				</div>
+			</div>
+
+			<div class="form-row full">
+				<div class="form-group">
+					<label for="email">Email Address *</label>
+					<input type="email" id="email" name="email" placeholder="john@example.com" required />
+				</div>
+			</div>
+
+			<div class="form-row full">
+				<div class="form-group">
+					<label for="phone">Phone Number *</label>
+					<input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
+				</div>
+			</div>
+
+			<div class="form-row full">
+				<div class="form-group">
+					<label for="details">Describe Your Tree Service Needs *</label>
+					<textarea id="details" name="details" placeholder="Tell us what you need help with. For example: Large oak tree needs trimming, tree removal, storm damage cleanup, stump grinding, etc." required></textarea>
+				</div>
+			</div>
+
+			<div class="address-toggle" id="addressToggle">
+				<span class="address-toggle-text">
+					<span class="address-toggle-icon">▼</span>
+					<span>Add Your Address (Optional)</span>
+				</span>
+			</div>
+
+			<div class="address-section" id="addressSection">
+				<div class="address-section-content">
+					<div class="form-row full">
+						<div class="form-group">
+							<label for="address">Street Address</label>
+							<input type="text" id="address" name="address" placeholder="123 Main Street" />
+						</div>
 					</div>
-					<div class="col-6 col-12-mobilep">
-						<input type="email" name="email" placeholder="Email" />
+
+					<div class="form-row full">
+						<div class="form-group">
+							<label for="city">City</label>
+							<input type="text" id="city" name="city" placeholder="Your City" />
+						</div>
 					</div>
-					<div class="col-12">
-						<textarea name="message" placeholder="Message" rows="6"></textarea>
+
+					<div class="form-row full">
+						<div class="form-group">
+							<label for="state">State/Province</label>
+							<input type="text" id="state" name="state" placeholder="CA" />
+						</div>
 					</div>
-					<div class="col-12">
-						<ul class="actions special">
-							<li><input type="submit" value="Send Message" /></li>
-						</ul>
+
+					<div class="form-row full">
+						<div class="form-group">
+							<label for="postal">Postal Code</label>
+							<input type="text" id="postal" name="postal" placeholder="90210" />
+						</div>
 					</div>
 				</div>
-			</form>
+			</div>
 
+			<button type="submit" class="submit-btn">Request Free Estimate</button>
+		</form>
+		<div id="formResponse" class="response-message"></div>
 			<ul class="icons">
 				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -372,6 +581,93 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-</body>
+	<script>
+		// Address section toggle functionality
+		document.getElementById('addressToggle').addEventListener('click', () => {
+			const toggle = document.getElementById('addressToggle');
+			const section = document.getElementById('addressSection');
+			toggle.classList.toggle('active');
+			section.classList.toggle('active');
+		});
+
+		// Form submission
+		document.getElementById('estimateForm').addEventListener('submit', async (e) => {
+			e.preventDefault();
+			
+			const apiKey = 'Bearer 6595e91a286313c2b72cc9868ab3e8659403b6c9efcad56abf42dcfa51585a66';
+			const submitBtn = document.querySelector('#estimateForm .submit-btn');
+			const responseDiv = document.getElementById('formResponse');
+			
+			// Disable button and show loading state
+			submitBtn.disabled = true;
+			const originalText = submitBtn.textContent;
+			submitBtn.textContent = 'Submitting...';
+			responseDiv.style.display = 'none';
+
+			// Collect form data
+			const formData = {
+				name: document.getElementById('name').value.trim(),
+				email: document.getElementById('email').value.trim(),
+				phone: document.getElementById('phone').value.trim(),
+				details: document.getElementById('details').value.trim(),
+				city: document.getElementById('city').value.trim() || '',
+				address: document.getElementById('address').value.trim() || '',
+				postal: document.getElementById('postal').value.trim() || '',
+				state: document.getElementById('state').value.trim() || '',
+				country: document.getElementById('country').value.trim() || 'USA',
+				address_notes: ''
+			};
+
+			try {
+				const response = await fetch('https://rhettstreeservice.arbostar.com/api/requests/create', {
+					method: 'POST',
+					headers: {
+						'Authorization': apiKey,
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(formData)
+				});
+
+				const data = await response.json();
+
+				// Display response
+				responseDiv.style.display = 'block';
+				if (response.ok) {
+					responseDiv.className = 'response-message success';
+					responseDiv.innerHTML = `
+						<strong>✓ Success!</strong><br/>
+						Your estimate request has been submitted. We'll contact you shortly!
+					`;
+					// Reset form on success
+					document.getElementById('estimateForm').reset();
+					// Collapse address section
+					document.getElementById('addressToggle').classList.remove('active');
+					document.getElementById('addressSection').classList.remove('active');
+					// Scroll to response message
+					responseDiv.scrollIntoView({ behavior: 'smooth' });
+				} else {
+					responseDiv.className = 'response-message error';
+					responseDiv.innerHTML = `
+						<strong>✗ Error (${response.status})</strong><br/>
+						${data.message || 'There was an issue submitting your request. Please try again.'}
+					`;
+					responseDiv.scrollIntoView({ behavior: 'smooth' });
+				}
+			} catch (error) {
+				responseDiv.style.display = 'block';
+				responseDiv.className = 'response-message error';
+				responseDiv.innerHTML = `
+					<strong>✗ Network Error</strong><br/>
+					${error.message}<br/>
+					<em style="font-size: 12px; margin-top: 8px; display: block;">Note: If you're testing locally, you may need a CORS proxy or to run this from a hosted server.</em>
+				`;
+				responseDiv.scrollIntoView({ behavior: 'smooth' });
+			} finally {
+				// Re-enable button
+				submitBtn.disabled = false;
+				submitBtn.textContent = originalText;
+			}
+		});
+	</script>
 
 </html>
