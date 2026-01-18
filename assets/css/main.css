@@ -3382,6 +3382,13 @@ text-align: center;
 .storm-damage-image {
 flex: 1;
 width: 100%;
+justify-content: center;
+text-align: center;
+}
+
+.storm-damage-image .image_storm {
+width: auto;
+display: inline-block;
 }
 
 .storm-damage-image .image_storm img {
