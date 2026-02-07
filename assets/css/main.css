@@ -3398,3 +3398,20 @@ height: 220px;
 object-position: center center;
 }
 }
+
+@media (max-width: 980px) {
+	.service-row .w3-third,
+	.service-row .w3-twothird {
+		float: none;
+		width: 100%;
+	}
+
+	.service-row .w3-third {
+		margin-bottom: 1.5em;
+		text-align: center;
+	}
+
+	.service-row .w3-twothird {
+		text-align: center;
+	}
+}
