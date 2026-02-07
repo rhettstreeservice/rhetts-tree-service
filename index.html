@@ -43,6 +43,26 @@
 		/* Darker Green */
 	}
 
+	.cta-group {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		align-items: center;
+		margin-top: 24px;
+	}
+
+	.cta-group .cta-button {
+		margin-top: 0;
+	}
+
+	.call-button {
+		background-color: #d97706;
+	}
+
+	.call-button:hover {
+		background-color: #b45309;
+	}
+
 	#estimateForm {
 		background: white;
 		padding: 30px;
@@ -258,8 +278,16 @@
 		margin: 24px 0 40px;
 	}
 
-	.contact-section .contact-links {
-		margin-top: 12px;
+	.contact-section .contact-phone a {
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	@media (min-width: 900px) {
+		.cta-group {
+			flex-direction: row;
+			justify-content: center;
+		}
 	}
 </style>
 
@@ -270,21 +298,10 @@
 		<img src="./images/Logo_trans.png" width="200">
 		<h1>Rhett's Tree Service</h1>
 		<p>Down-to-Earth Tree Service—Rooted in Family, Trusted by Neighbors.</p>
-		<a href="#estimateSection" class="cta-button">Get a Free Estimate</a>
-		<section class="contact-section">
-			<header>
-				<h2>Contact Us</h2>
-			</header>
-			<p>Rhett’s Tree Service, West Fork AR 72774</p>
-			<p><a href="tel:14792702022">479-270-2022</a></p>
-			<p><a href="mailto:office@rhettstreeservice.com">office@rhettstreeservice.com</a></p>
-			<div class="contact-links">
-				<a href="https://www.facebook.com/profile.php?id=61576113913927"
-					class="icon brands fa-facebook-f" aria-label="Facebook">
-					<span class="label">Facebook</span>
-				</a>
-			</div>
-		</section>
+		<div class="cta-group">
+			<a href="#estimateSection" class="cta-button">Get a Free Estimate</a>
+			<a href="tel:14792702022" class="cta-button call-button">Call 479-270-2022</a>
+		</div>
 	</div>
 
 
@@ -552,7 +569,9 @@
 			</ul>
 
 			<ul class="copyright">
-				<li>&copy; Untitled. All rights reserved.</li>
+				<li>West Fork AR 72774</li>
+				<li><a href="tel:14792702022">479-270-2022</a></li>
+				<li><a href="mailto:office@rhettstreeservice.com">office@rhettstreeservice.com</a></li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 			</ul>
 
